@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HousingLocation } from './../housing-location';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-housing-location',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './housing-location.component.html',
   styleUrl: './housing-location.component.scss'
 })
-export class HousingLocationComponent {
+export class HousingLocationComponent implements OnInit {
+  @Input() housingLocation!:HousingLocation
 
+
+  ngOnInit(): void {
+    console.log(this.housingLocation);
+
+  }
 }

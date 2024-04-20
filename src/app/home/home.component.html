@@ -1,5 +1,8 @@
 <div class="p-4">
   <app-header></app-header>
   <app-search></app-search>
-  <app-housing-location></app-housing-location>
+  <div class="grid grid-cols-3">
+    <app-housing-location *ngFor="let housingLocation of housingLocationList"
+      [housingLocation]="housingLocation"></app-housing-location>
+  </div>
 </div>

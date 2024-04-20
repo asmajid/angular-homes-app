@@ -1,1 +1,12 @@
-<p>housing-location works!</p>
+<section class="bg-blue-100 p-2 m-4 mt-8 shadow-xl font-bold rounded-xl">
+  <a href="">
+    <img [src]="housingLocation.photo" alt="{{housingLocation.name}}" class="w-96 h-52 hover:scale-105 mb-4">
+  </a>
+  <h2 class="text-blue-500">{{housingLocation.name}}</h2>
+  <div class="content">
+    <img src="" alt="">
+    <p class="text-xs text-black">{{housingLocation.city}}, {{housingLocation.state}}</p>
+  </div>
+
+</section>
+
