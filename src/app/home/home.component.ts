@@ -10,7 +10,6 @@ import { HousingLocation } from '../housing-location';
   selector: 'app-home',
   standalone: true,
   imports: [
-    HeaderComponent,
     SearchComponent,
     HousingLocationComponent,
     CommonModule
