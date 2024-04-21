@@ -5,6 +5,7 @@ import { HeaderComponent } from '../header/header.component';
 import { SearchComponent } from '../search/search.component';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { HousingLocation } from '../housing-location';
+import { HousingService } from '../housing.service';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,12 @@ import { HousingLocation } from '../housing-location';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  housingLocationList: HousingLocation[] = HousingLocationData;
+  housingLocationList!: HousingLocation[]
+
+  constructor(private housingService: HousingService) {
+    this.housingLocationList = housingService.getAllHousinLocation();
+
+
+  }
 
 }
