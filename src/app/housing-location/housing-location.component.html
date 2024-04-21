@@ -1,11 +1,9 @@
 <section class="bg-blue-100 p-2 m-4 mt-8 shadow-xl font-bold rounded-xl">
   <img [src]="housingLocation.photo" alt="{{housingLocation.name}}" class="w-96 h-52 mb-4">
   <h2 class="text-blue-500">{{housingLocation.name}}</h2>
-  <div class="">
-    <img src="" alt="">
+  <div>
     <p class="text-xs text-black">{{housingLocation.city}}, {{housingLocation.state}}</p>
     <a [routerLink]="['/details', housingLocation.id]" routerLinkActive="router-link-active"  class="text-xs text-red-600">Learn more >>></a>
   </div>
-
 </section>
 

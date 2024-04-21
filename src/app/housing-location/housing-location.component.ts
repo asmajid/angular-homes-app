@@ -15,8 +15,5 @@ export class HousingLocationComponent implements OnInit {
   @Input() housingLocation!:HousingLocation
 
 
-  ngOnInit(): void {
-    console.log(this.housingLocation);
-
-  }
+  ngOnInit(): void {}
 }

@@ -1,1 +1,31 @@
-<p>{{this.housingLocationId}}</p>
+<div class="grid grid-cols-2 p-8 mr-20 ml-20 mt-20 h-[60vh] bg-blue-100 shadow-xl font-bold rounded-xl">
+  <div>
+    <img [src]="housingLocation?.photo" alt="" class="h-full rounded-xl">
+  </div>
+  <div class="m-10 ml-20">
+    <div>
+      <h2 class="text-2xl text-blue-500">{{housingLocation?.name}}</h2>
+      <div class="text-xs flex mt-1">
+        <img src="../../assets/state-icon.png" class="w-3 h-3" alt="">
+        <span>{{housingLocation?.state}}</span>
+      </div>
+    </div>
+    <div class="mt-4">
+      <p class="text-red-600 font-bold">About this location</p>
+      <div class="text-xs font-light">
+        <p>Units available:
+          <span>{{housingLocation?.availableUnits}}</span>
+        </p>
+        <div class="space-x-4">
+          <span>This location</span>
+          <p> - {{ housingLocation?.wifi ? "Has wifi" : "Doesn't have wifi" }}</p>
+          <p> - {{ housingLocation?.laundry ? "Has laundry" : "Desn't have laundry" }}</p>
+        </div>
+      </div>
+    </div>
+   <div class="text-xs mt-14">
+    <p class="font-mono">Apply now to live here</p>
+    <button class="bg-red-600 w-20 h-7 mt-2 ml-5 text-white font-mono hover:bg-red-700">Apply now</button>
+   </div>
+  </div>
+</div>
