@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HousingService } from '../housing.service';
 import { CommonModule } from '@angular/common';
 
@@ -15,23 +15,31 @@ import { CommonModule } from '@angular/common';
 })
 export class ApplyFormComponent {
   isFormVisible:boolean = true
-  constructor(private housingService: HousingService) {}
+  applyForm:FormGroup
 
-  applyForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl('')
-  })
+  housingService:HousingService = inject(HousingService)
+
+  constructor() {
+    this.applyForm = new FormGroup({
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email])
+    })
+
+  }
 
   sendApplication() {
-  this.housingService.sendApplication(
-    this.applyForm.value.firstName ?? '',
-    this.applyForm.value.lastName ?? '',
-    this.applyForm.value.email ?? ''
-  )
-  this.applyForm.reset()
-  this.isFormVisible = false
-
+    if (this.applyForm.valid) {
+      this.housingService.sendApplication(
+        this.applyForm.value.firstName ?? '',
+        this.applyForm.value.lastName ?? '',
+        this.applyForm.value.email ?? ''
+      )
+      this.applyForm.reset()
+      this.isFormVisible = false
+    }else {
+      console.warn('Form is invalid. Please fix errors before submitting.');
+    }
 
  }
 

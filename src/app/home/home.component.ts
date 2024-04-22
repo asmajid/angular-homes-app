@@ -22,9 +22,7 @@ export class HomeComponent {
   housingLocationList!: HousingLocation[]
 
   constructor(private housingService: HousingService) {
-    this.housingLocationList = housingService.getAllHousinLocation();
-
-
+    this.housingLocationList = housingService.getAllHousinLocation()
   }
 
 }

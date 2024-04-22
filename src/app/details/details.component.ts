@@ -20,7 +20,6 @@ export class DetailsComponent {
   housingLocationId = 0
   housingLocation!: HousingLocation|undefined
   showApplyForm:boolean = false
-  @Input() isFormVisible!:boolean
 
 
   constructor(private route: ActivatedRoute, private housingService:HousingService) {
