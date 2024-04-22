@@ -19,4 +19,8 @@ export class HousingService {
       return housingLocation.id === id
     })
   }
+
+  sendApplication(firstName:string, lastName:string, email:string) {
+    console.log(firstName, lastName, email);
+  }
 }
