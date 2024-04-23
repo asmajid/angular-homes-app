@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HousingLocation } from './../housing-location';
 import { HousingService } from './../housing.service';
 
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplyFormComponent } from '../apply-form/apply-form.component';
 

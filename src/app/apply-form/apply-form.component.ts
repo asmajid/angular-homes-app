@@ -40,8 +40,11 @@ export class ApplyFormComponent {
     }else {
       console.warn('Form is invalid. Please fix errors before submitting.');
     }
+  }
 
- }
+cancelApplication() {
+  this.isFormVisible = false;
+}
 
 
 }
